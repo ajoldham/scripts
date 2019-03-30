@@ -2,9 +2,8 @@
 # Works on Azure/Ubuntu 16.04
 
 # To run... or Copy/Paste :)
-# wget https://github.com/ajoldham/scripts/blob/master/ubuntu-setup.sh
-# chmod +x ubuntu-setup.sh
-# ./ubuntu-setup.sh
+# wget https://raw.githubusercontent.com/ajoldham/scripts/master/ubuntu-setup.sh
+# bash ubuntu-setup.sh
 
 # Install Docker
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"

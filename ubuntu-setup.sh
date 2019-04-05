@@ -20,6 +20,31 @@ source ~/.bash_aliases
 
 sudo apt-get install traceroute
 
+# ifconfig ~1MB
+sudo apt-get install net-tools
+
+# TCPDump ~3MB
+sudo apt-get install tcpdump -y
+
+# Telnet ~1MB ... useful for port testing :)
+sudo apt-get install telnet
+
+# NSLookup ~45MB
+sudo apt-get install dnsutils -y
+
+# Samba
+sudo apt-get install samba
+sudo smbpasswd -a $USER
+sudo bash -c 'echo "[ALL]" >> /etc/samba/smb.conf'
+sudo bash -c 'echo "path = /" >> /etc/samba/smb.conf'
+# Check valid users is not root (from sudo)
+USERNAME=$USER
+sudo bash -c 'echo "valid users = $USERNAME" >> /etc/samba/smb.conf'
+sudo bash -c 'echo "read only = no" >> /etc/samba/smb.conf'
+sudo service smb
+
+
+
 
 # Allow SSH for Ubuntu Desktop
 # sudo apt-get install openssh-server

@@ -19,6 +19,8 @@ echo "alias dc='docker-compose'" >> ~/.bash_aliases
 source ~/.bash_aliases
 
 sudo apt-get install traceroute
+sudo apt-get install tree
+
 
 # ifconfig ~1MB
 sudo apt-get install net-tools

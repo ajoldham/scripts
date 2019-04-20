@@ -34,6 +34,47 @@ sudo apt-get install telnet
 # NSLookup ~45MB
 sudo apt-get install dnsutils -y
 
+# sha256sum and md5sum ~1MB
+sudo apt-get install hashalot
+
+# My Trace Route ~28MB
+sudo apt-get install mtr -y
+
+# Speedtest ~1MB
+sudo pip install speedtest-cli
+
+# todos and fromdos to convert LF to CR/LF for Windows/Linux/Mac text compatibility ~2MB
+sudo apt-get install tofrodos
+
+# Hping3 ~5MB
+# Examples: http://0daysecurity.com/articles/hping3_examples.html
+# Note: Docker seems to rate/limit/drop flood commands
+# ENV fixes prompting in Ubuntu 18.04
+ENV DEBIAN_FRONTEND=noninteractive
+sudo apt-get install hping3 -y
+
+# Lynx Web Browser ~8MB
+sudo apt-get install lynx -y
+
+# Slurm Network Usage ~1MB
+# Example: slurm -i eth0
+sudo apt-get install slurm -y
+
+# NMon System Monitor ~2MB
+sudo apt-get install nmon -y
+
+# Disk Monitor ~3MB
+# Example: Disk Queue size: iostat -x
+RUN apt-get install sysstat -y
+
+# Aria2 Multi-threaded download ~6MB
+# Example download with 8 connections: aria2c -x 8 http://releases.ubuntu.com/16.04/ubuntu-16.04.5-desktop-amd64.iso 
+sudo apt-get install aria2 -y
+
+# Midnight Commander mc ~10MB
+sudo apt-get install mc -y
+
+
 # Samba
 sudo apt-get install samba
 sudo smbpasswd -a $USER

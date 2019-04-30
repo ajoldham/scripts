@@ -1,5 +1,5 @@
 #!/bin/bash
-# Works on Azure/Ubuntu 16.04 and 18.04
+# Works on Azure/Ubuntu and Ubuntu Desktop 16.04 and 18.04
 
 # To run... or Copy/Paste :)
 # wget https://raw.githubusercontent.com/ajoldham/scripts/master/ubuntu-setup.sh

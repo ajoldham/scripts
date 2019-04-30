@@ -5,12 +5,25 @@
 # wget https://raw.githubusercontent.com/ajoldham/scripts/master/ubuntu-setup.sh
 # bash ubuntu-setup.sh
 
-# Install Docker
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 sudo apt-get update
+
+# Enable SSH (Needed on Ubuntu Desktop)
+sudo apt-get install openssh-server -y
+sudo system ctl start ssh
+
+# Install Docker
+sudo apt install curl -y
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 sudo apt-get install docker-ce -y
-sudo apt-get install docker-compose -y
 sudo gpasswd -a $USER docker
+
+# Install Docker-Compose
+DOCKER_COMPOSE=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep 'tag_name' | cut -d\" -f4)
+sudo curl -L "https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+# Misc Docker
 mkdir ~/docker
 cd ~/docker
 git clone https://github.com/ajoldham/pantools

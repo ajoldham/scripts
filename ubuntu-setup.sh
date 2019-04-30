@@ -9,7 +9,7 @@ sudo apt-get update
 
 # Enable SSH (Needed on Ubuntu Desktop)
 sudo apt-get install openssh-server -y
-sudo system ctl start ssh
+sudo systemctl start ssh
 
 # Install Docker
 sudo apt install curl -y
@@ -98,11 +98,3 @@ USERNAME=$USER
 sudo bash -c 'echo "valid users = $USERNAME" >> /etc/samba/smb.conf'
 sudo bash -c 'echo "read only = no" >> /etc/samba/smb.conf'
 sudo service smb
-
-
-
-
-# Allow SSH for Ubuntu Desktop
-# sudo apt-get install openssh-server
-# sudo service ssh start
-

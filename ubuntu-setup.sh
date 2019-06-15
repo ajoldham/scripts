@@ -26,10 +26,11 @@ sudo chmod +x /usr/local/bin/docker-compose
 # Misc Docker
 mkdir ~/docker
 cd ~/docker
-git clone https://github.com/ajoldham/pantools
 echo "alias dpwd='docker run -it -v `pwd`:/pwd pantools'" >> ~/.bash_aliases
 echo "alias dc='docker-compose'" >> ~/.bash_aliases
 source ~/.bash_aliases
+
+git clone https://github.com/ajoldham/pantools
 
 sudo apt-get install traceroute
 sudo apt-get install tree

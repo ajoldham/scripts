@@ -15,8 +15,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 # Misc Docker
 mkdir ~/docker
 cd ~/docker
-echo "alias dpwd='docker run -it -v /mnt/hgfs:/pwd pantools'" >> ~/.bash_aliases
-echo "alias pswb='docker run -it -v /mnt/hgfs:/pwd pantools'" >> ~/.bash_aliases
+echo "alias dpwd='docker run -it -v "$PWD:/pwd" pantools'" >> ~/.bash_aliases
 echo "alias dc='docker-compose'" >> ~/.bash_aliases
 source ~/.bash_aliases
 
@@ -79,5 +78,9 @@ sudo apt upgrade -y
 # Resolve problem with some processes hanging on boot
 sudo systemctl disable systemd-networkd-wait-online.service
 sudo systemctl mask systemd-networkd-wait-online.service
+
+# Download Docker Pantools Image
+sudo docker pull paloaltonetworks/pantools
+sudo docker tag paloaltonetworks/pantools pantools
 
 sudo reboot

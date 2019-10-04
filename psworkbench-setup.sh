@@ -15,7 +15,8 @@ sudo chmod +x /usr/local/bin/docker-compose
 # Misc Docker
 mkdir ~/docker
 cd ~/docker
-echo "alias dpwd='docker run -it -v "$PWD:/pwd" pantools'" >> ~/.bash_aliases
+echo "alias dpwd='docker run -it -v /mnt/hgfs:/pwd pantools'" >> ~/.bash_aliases
+echo "alias pswb='docker run -it -v /mnt/hgfs:/pwd pantools'" >> ~/.bash_aliases
 echo "alias dc='docker-compose'" >> ~/.bash_aliases
 source ~/.bash_aliases
 

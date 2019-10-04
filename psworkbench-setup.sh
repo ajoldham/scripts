@@ -71,3 +71,12 @@ sudo apt-get install sysstat -y
 # Midnight Commander mc ~10MB
 sudo apt-get install mc -y
 
+
+# Install latest Ubuntu patches
+sudo apt upgrade
+
+# Resolve problem with some processes hanging on boot
+sudo systemctl disable systemd-networkd-wait-online.service
+sudo systemctl mask systemd-networkd-wait-online.service
+
+sudo reboot

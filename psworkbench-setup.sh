@@ -73,7 +73,7 @@ sudo apt-get install mc -y
 
 
 # Install latest Ubuntu patches
-sudo apt upgrade
+sudo apt upgrade -y
 
 # Resolve problem with some processes hanging on boot
 sudo systemctl disable systemd-networkd-wait-online.service

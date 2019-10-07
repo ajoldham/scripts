@@ -81,7 +81,7 @@ sudo systemctl disable systemd-networkd-wait-online.service
 sudo systemctl mask systemd-networkd-wait-online.service
 
 # Download Docker Pantools Image
-sudo docker pull paloaltonetworks/pantools
-sudo docker tag paloaltonetworks/pantools pantools
+#sudo docker pull paloaltonetworks/pantools
+#sudo docker tag paloaltonetworks/pantools pantools
 
 sudo reboot

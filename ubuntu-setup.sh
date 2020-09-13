@@ -99,3 +99,9 @@ USERNAME=$USER
 sudo bash -c 'echo "valid users = $USERNAME" >> /etc/samba/smb.conf'
 sudo bash -c 'echo "read only = no" >> /etc/samba/smb.conf'
 sudo service smb
+
+
+# MetaSploit
+curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && \
+  chmod 755 msfinstall && \
+  ./msfinstall

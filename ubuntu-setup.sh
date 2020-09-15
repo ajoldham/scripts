@@ -30,7 +30,7 @@ echo "alias dpwd='docker run -it -v `pwd`:/pwd pantools'" >> ~/.bash_aliases
 echo "alias dc='docker-compose'" >> ~/.bash_aliases
 source ~/.bash_aliases
 
-git clone https://github.com/ajoldham/pantools
+# git clone https://github.com/ajoldham/pantools
 
 sudo apt-get install traceroute
 sudo apt-get install tree

@@ -88,9 +88,14 @@ sudo apt-get install aria2 -y
 # Midnight Commander mc ~10MB
 sudo apt-get install mc -y
 
+# MetaSploit
+curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && \
+  chmod 755 msfinstall && \
+  ./msfinstall
+
 
 # Samba
-sudo apt-get install samba
+sudo apt-get install samba -y
 sudo smbpasswd -a $USER
 sudo bash -c 'echo "[ALL]" >> /etc/samba/smb.conf'
 sudo bash -c 'echo "path = /" >> /etc/samba/smb.conf'
@@ -99,9 +104,3 @@ USERNAME=$USER
 sudo bash -c 'echo "valid users = $USERNAME" >> /etc/samba/smb.conf'
 sudo bash -c 'echo "read only = no" >> /etc/samba/smb.conf'
 sudo service smb
-
-
-# MetaSploit
-curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && \
-  chmod 755 msfinstall && \
-  ./msfinstall
